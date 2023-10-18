@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: none;
+
+}
+/* Time Selection and First Selection for first images only*/
+.timeSelection{
+ display: flex;
+ justify-content: space-evenly;
+ overflow: hidden;
+ object-fit: cover;
+ height: 100vh;
+ position: absolute;
+}
+.FirstSelection{
+max-width: 33.33%;
+max-height:max-content;
+}
+
+
+/* main Buttons only */
+.buttonSection {
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+    object-fit: cover;
+    position: relative;
+   padding-top: 20%;
+}
+.mainButtons {
+    background-color: #555;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    border-radius: 5px;
+    border-style: none;
+}
+.mainButtons:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.418);
+}
+/* Medieval Settings */
+
+.medieval-image-container {
+    display: flex; 
+}
+
+.medievalSetting {
+    display: none;
+    max-width: 100%;
+    height: 100vh; 
+    overflow: hidden;
+    object-fit: cover;
+}
+
