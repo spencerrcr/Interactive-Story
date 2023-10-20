@@ -7,50 +7,112 @@ body {
 }
 /* Time Selection and First Selection for first images only*/
 .timeSelection{
- display: flex;
- justify-content: space-evenly;
- overflow: hidden;
- object-fit: cover;
- height: 100vh;
- position: absolute;
+display: grid;
+grid-template-columns: auto auto auto auto;
+overflow: hidden;
 }
-.FirstSelection{
-max-width: 33.33%;
-max-height:max-content;
+
+.timeSelection > img {
+    min-width:50%;
+    height: 100vh; 
+    overflow: hidden;
+    object-fit: cover;
 }
 
 
 /* main Buttons only */
 .buttonSection {
+   position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: space-around;
-    overflow: hidden;
-    object-fit: cover;
-    position: relative;
-   padding-top: 20%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    z-index: 2;
+    
 }
+
 .mainButtons {
     background-color: #555;
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     border-radius: 5px;
     border-style: none;
+    position: relative;
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.FirstSelection {
+    z-index: 1;
 }
 .mainButtons:hover {
     cursor: pointer;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.418);
 }
-/* Medieval Settings */
-
-.medieval-image-container {
-    display: flex; 
+.mainButtonSpacing {
+    padding: 250px; 
 }
 
-.medievalSetting {
-    display: none;
-    max-width: 100%;
-    height: 100vh; 
+/* Medieval Settings */
+.medieval-image-container{
+    display: grid;
+    grid-template-columns: 50% 50% auto auto;
+    overflow: hidden;
+    height: 100vh;
+    min-width:100%;
     overflow: hidden;
     object-fit: cover;
+    }
+  /* Medieval Button Settings */  
+  .MedbuttonSection {
+    position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     max-height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: row;
+     z-index: 2;
+     overflow: hidden;
+     
+ }
+ 
+ .medSettingButton {
+     background-color: #555;
+     font-family: 'Montserrat', sans-serif;
+     font-size: 24px;
+     border-radius: 0px 59px 59px 0px;
+     border-style: none;
+     position: relative;
+     padding: 10px 20px;
+     cursor: pointer;
+     overflow: hidden;
+ }
+ 
+ .medSettingButton:hover {
+     cursor: pointer;
+     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.418);
+ }
+ .medievalButtonSpacing {
+      /* padding-left: 50%; */
+     padding-top: 50%; 
+     height: 50%;
+     width: 30%;
+ }
+ 
+.live {
+    background-color: #555;
+     font-family: 'Montserrat', sans-serif;
+     font-size: 24px;
+     border-top-right-radius: 0;
+     border-radius: 59px 0px 0px 59px;
+     border-style: none;
+     padding: 10px 20px;
 }
-
