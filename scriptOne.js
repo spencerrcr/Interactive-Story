@@ -1,25 +1,44 @@
-// function toggleImages(){
-// let medMain = document.getElementById('medMain');
-// let romanMain = document.getElementById('romanMain');
-// let sixtiesMain = document.getElementById('sixtiesMain');
+document.addEventListener('DOMContentLoaded', (event) => {
+    let seraphineAttribs = document.querySelectorAll('.seraphineAttrib');
+    let ladyButtonHover = document.querySelector('#ladyButtonHover');
+    let backgroundImage = document.querySelector('.ladySeraphine');
 
-// if(getComputedStyle(medMain).display !== 'none'){
-//     romanMain.style.display ='none';
-//     sixtiesMain.style.display = 'none';
-//     medMain.style.display = 'none';
+    // Initially hide all seraphineAttrib elements
+    seraphineAttribs.forEach(attrib => attrib.style.display = 'none');
 
-//     //using ID's show the first two medival selections
-//     medhiddingFirstChoice.style.display = 'flex';
-//     medhiddingSecondChoice.style.display = 'flex';
-//     //using ID's hide the buttons
-//     romanHide.style.display = 'none';
-//     medHide.style.display ='none';
-//     sixtiesHide.style.display= 'none';
-//     buttonSection.style.display = 'none';
-// } 
-// else {
-//     medMain.style.display ='block';
-//     sixtiesMain.style.display = 'block';
-//     romanMain.style.display = 'block';
-// }
-// }
+    ladyButtonHover.addEventListener('click', () => {
+        let anyVisible = Array.from(seraphineAttribs).some(attrib => attrib.style.display === 'block');
+        if (anyVisible) {
+            seraphineAttribs.forEach(attrib => attrib.style.display = 'none');
+            backgroundImage.style.filter = 'brightness(100%)';
+        } else {
+            seraphineAttribs[0].style.display = 'block';  // Show the first slide
+            backgroundImage.style.filter = 'brightness(50%)';
+            slideIndex = 1;  // Reset the slideIndex for the slideshow
+        }
+    });
+
+    // Slideshow functionality
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    window.plusSlides = function(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    window.currentSlide = function(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        if (n > seraphineAttribs.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = seraphineAttribs.length}
+        for (i = 0; i < seraphineAttribs.length; i++) {
+            seraphineAttribs[i].style.display = "none";
+        }
+        seraphineAttribs[slideIndex-1].style.display = "block";
+    }
+});
